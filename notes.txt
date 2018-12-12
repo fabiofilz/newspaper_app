@@ -8,3 +8,8 @@ ffilz@hotmail.com
 news_paper_ffs/fabiofilz123
 https://sendgrid.com/
 
+
+from django.contrib.auth import get_user_model
+user = get_user_model().objects.get(username='usertest2')
+user.email = 't2@gmail.com'
+user.save()
