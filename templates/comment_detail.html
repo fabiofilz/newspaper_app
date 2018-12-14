@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="article-entry">
+    <h2>{{ object.article }}</h2>
+    <p>by {{ object.author }} | {{ object.date }}</p>
+    <p>{{ object.comment }}</p>
+</div>
+<p>
+    <a href="{% url 'comment_edit' comment.article.pk comment.pk %}">Edit</a> | 
+    <a href="{% url 'comment_delete' comment.article.pk comment.pk %}">Delete</a>
+</p>
+<p>Back to <a href="{% url 'article_list' %}">All Articles</a>.</p>
+{% endblock content %}

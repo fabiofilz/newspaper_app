@@ -39,3 +39,11 @@ user = get_user_model().objects.get(username='usertest3')
 django.db.models.fields.DateTimeField: date_joined>, <
 django.db.models.fields.related.ManyToManyField: groups>,
 <django.db.models.fields.related.ManyToManyField: user_permissions
+
+
+
+
+http://127.0.0.1:8000/articles/1/comment/1
+
+
+
