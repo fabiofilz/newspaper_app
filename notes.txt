@@ -1,31 +1,20 @@
 https://ffs-newspaper.herokuapp.com/ deployed to Heroku
 
 apps
-fabiofilz@gmail.com
-welcome123
+w..123
 
-(news) bash-3.2$ heroku create ffs-newspaper
-Creating ⬢ ffs-newspaper... done
-https://ffs-newspaper.herokuapp.com/ | https://git.heroku.com/ffs-newspaper.git
-
-Email
-ffilz@hotmail.com
-news_paper_ffs/fabiofilz123
+Email: ffilz@hotmail.com
+news_paper_ffs/123
 https://sendgrid.com/
 
 
+-- updating user details from shell
 from django.contrib.auth import get_user_model
 user = get_user_model().objects.get(username='usertest2')
 user.email = 't2@gmail.com'
 user.save()
 
-
-
-
-user = get_user_model().objects.get(username='usertest3')
-
-
-
+-- user fields
 <django.db.models.fields.AutoField: id>, 
 <django.db.models.fields.CharField: password>,
 <django.db.models.fields.DateTimeField: last_login>,
@@ -35,15 +24,7 @@ user = get_user_model().objects.get(username='usertest3')
 <django.db.models.fields.CharField: last_name>,
 <django.db.models.fields.EmailField: email>,
 <django.db.models.fields.BooleanField: is_staff>,
-<django.db.models.fields.BooleanField: is_active>, <
-django.db.models.fields.DateTimeField: date_joined>, <
-django.db.models.fields.related.ManyToManyField: groups>,
+<django.db.models.fields.BooleanField: is_active>, 
+<django.db.models.fields.DateTimeField: date_joined>, 
+<django.db.models.fields.related.ManyToManyField: groups>,
 <django.db.models.fields.related.ManyToManyField: user_permissions
-
-
-
-
-http://127.0.0.1:8000/articles/1/comment/1
-
-
-
