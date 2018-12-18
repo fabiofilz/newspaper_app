@@ -8,5 +8,6 @@ class ArticleAdmin(admin.ModelAdmin):
     inlines = [
         CommentInline,
         ]
+        
 admin.site.register(models.Article, ArticleAdmin)
 admin.site.register(models.Comment)

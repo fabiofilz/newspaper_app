@@ -27,4 +27,5 @@ class Comment(models.Model):
         return '(id: ' + str(self.id) + ') ' + self.comment
         
     def get_absolute_url(self):
-        return reverse('article_list')
+        reverse('comment_detail', args=[str(self.id)])
+        # return reverse('article_list')

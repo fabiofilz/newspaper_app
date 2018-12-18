@@ -4,7 +4,9 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from . import models
 from django.utils import timezone
-from django.shortcuts import redirect
+from django.shortcuts import redirect, get_object_or_404
+from django.urls import reverse
+from django.http import HttpResponseRedirect
 
 # ARTICLES VIEW
 class ArticleCreateView(LoginRequiredMixin, CreateView):
@@ -42,18 +44,6 @@ class ArticleDeleteView(LoginRequiredMixin, DeleteView):
     login_url = 'login'
 
 # COMMENT VIEWS
-# class CommentCreateView(LoginRequiredMixin, CreateView):
-#     # board = get_object_or_404(Board, pk=pk)
-#     model = models.Comment
-#     template_name = 'comment_new.html'
-#     fields = ['comment', 'article']
-#     success_url = reverse_lazy('article_list')
-#     login_url = 'login'
-    
-#     def form_valid(self, form):
-#         form.instance.author = self.request.user
-#         return super().form_valid(form)
-
 class CommentDetailView(LoginRequiredMixin, DetailView):
     model = models.Comment
     template_name = 'comment_detail.html'
@@ -88,11 +78,12 @@ class CommentUpdateView(LoginRequiredMixin, UpdateView):
 class CommentCreateView(LoginRequiredMixin, CreateView):
     model = models.Comment
     template_name = 'comment_new.html'
-    fields = ['comment', 'article']
+    fields = ['comment'] #, 'article']
     success_url = reverse_lazy('article_list')
     login_url = 'login'
     
     def form_valid(self, form):
         form.instance.author = self.request.user
+        form.instance.article = get_object_or_404(models.Article, 
+                                                  id=self.kwargs.get('article_pk'))
         return super().form_valid(form)
-
